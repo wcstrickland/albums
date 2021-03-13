@@ -37,8 +37,7 @@ app.get('/', async (req, res, next) => {
 app.get('/:id', async (req, res, next) => {
     const { id } = req.params
     const albumPics = fs.readdirSync(`./public/${id}`);
-    const halfPics = albumPics.filter(x => albumPics.indexOf(x) % 2 === 0);
-    const stripPics = halfPics.map(x => x.replace('"', ''))
+    const stripPics = albumPics.map(x => x.replace('"', ''))
     const albums = fs.readdirSync(`./public/`);
     const stripAlbums = albums.map(x => x.replace('"', ''))
     const albumsList = [];
