@@ -1,0 +1,14 @@
+<% layout('/layouts/boilerplate') %>
+<h1>Albums</h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% for(let album of albumsList) {%> 
+      <div class="col">
+        <div class="card border-secondary mb-3 mx-auto border-radius 5%" style="max-width: 18rem;">
+            <img src="/<%= album.name %>/<%= album.pics[0] %>  " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-text"><a href="/<%= album.name %>"><span class="text-muted"><%= album.name %></span></a> </h5>
+            </div>
+          </div>
+      </div>
+    <%} %> 
+    </div>
