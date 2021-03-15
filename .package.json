@@ -1,0 +1,32 @@
+{
+  "name": "albums",
+  "version": "1.0.0",
+  "description": "- create a `public` directory at the top level of the app.\r - run npm i\r - add directories representing individual albums to `public`\r - the first alphabetical file name in each \"album\" will be its image on the home page\r - npm start runs the server\r - npm live runs a nodemon live server allowing albums to be added without stopping the server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "live": "nodemon .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "method-override": "^3.0.0",
+    "nodemon": "^2.0.7",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcstrickland/albums.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wcstrickland/albums/issues"
+  },
+  "homepage": "https://github.com/wcstrickland/albums#readme"
+}

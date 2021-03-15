@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // serves static assets
 
 // HOME
 app.get('/', async (req, res, next) => {
+    try{
     const albums = fs.readdirSync(`./public/`);
     const stripAlbums = albums.map(x => x.replace('"', ''))
     const albumsList = [];
@@ -32,9 +33,14 @@ app.get('/', async (req, res, next) => {
         albumsList.push(albumObj);
     }
     res.render('home', { albumsList });
+    } catch(e){
+        console.log(e);
+        next();
+    }
 })
 
 app.get('/:id', async (req, res, next) => {
+    try{
     const { id } = req.params
     const albumPics = fs.readdirSync(`./public/${id}`);
     const stripPics = albumPics.map(x => x.replace('"', ''))
@@ -49,6 +55,10 @@ app.get('/:id', async (req, res, next) => {
         albumsList.push(albumObj);
     }
     res.render('pics/pics', { stripPics, id, albumsList })
+    }catch(e){
+        console.log(e);
+        next();
+    }
 })
 
 
