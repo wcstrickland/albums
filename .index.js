@@ -21,42 +21,42 @@ app.use(express.static(path.join(__dirname, 'public'))); // serves static assets
 
 // HOME
 app.get('/', async (req, res, next) => {
-    try{
-    const albums = fs.readdirSync(`./public/`);
-    const stripAlbums = albums.map(x => x.replace('"', ''))
-    const albumsList = [];
-    for (let album of stripAlbums) {
-        let albumObj = {};
-        albumObj.name = album;
-        const pics = fs.readdirSync(`./public/${album}`);
-        albumObj.pics = pics.map(x => x.replace('"', ''))
-        albumsList.push(albumObj);
-    }
-    res.render('home', { albumsList });
-    } catch(e){
-        console.log(e);
+    try {
+        const albums = fs.readdirSync(`./public/`);
+        const stripAlbums = albums.map(x => x.replace('"', ''))
+        const albumsList = [];
+        for (let album of stripAlbums) {
+            let albumObj = {};
+            albumObj.name = album;
+            const pics = fs.readdirSync(`./public/${album}`);
+            albumObj.pics = pics.map(x => x.replace('"', ''))
+            albumsList.push(albumObj);
+        }
+        console.log("Album Server is Running")
+        res.render('home', { albumsList });
+    } catch (e) {
         next();
     }
 })
 
 app.get('/:id', async (req, res, next) => {
-    try{
-    const { id } = req.params
-    const albumPics = fs.readdirSync(`./public/${id}`);
-    const stripPics = albumPics.map(x => x.replace('"', ''))
-    const albums = fs.readdirSync(`./public/`);
-    const stripAlbums = albums.map(x => x.replace('"', ''))
-    const albumsList = [];
-    for (let album of stripAlbums) {
-        let albumObj = {};
-        albumObj.name = album;
-        const pics = fs.readdirSync(`./public/${album}`);
-        albumObj.pics = pics.map(x => x.replace('"', ''))
-        albumsList.push(albumObj);
-    }
-    res.render('pics/pics', { stripPics, id, albumsList })
-    }catch(e){
-        console.log(e);
+    try {
+        const { id } = req.params
+        const albumPics = fs.readdirSync(`./public/${id}`);
+        const stripPics = albumPics.map(x => x.replace('"', ''))
+        const albums = fs.readdirSync(`./public/`);
+        const stripAlbums = albums.map(x => x.replace('"', ''))
+        const albumsList = [];
+        for (let album of stripAlbums) {
+            let albumObj = {};
+            albumObj.name = album;
+            const pics = fs.readdirSync(`./public/${album}`);
+            albumObj.pics = pics.map(x => x.replace('"', ''))
+            albumsList.push(albumObj);
+        }
+        console.log("Album Server is Running")
+        res.render('pics/pics', { stripPics, id, albumsList })
+    } catch (e) {
         next();
     }
 })
