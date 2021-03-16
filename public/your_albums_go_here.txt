@@ -1,3 +1,0 @@
-your albums go here.
-each album should be a folder
-each folder should contain only files. not additional folders.
