@@ -3,7 +3,8 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
     <% for(let album of albumsList) {%> 
       <div class="col">
-        <div class="card  mb-3 mx-auto rounded-3" style="max-width: 18rem; background-color: aliceblue;">
+        <div class="card  mb-3 mx-auto rounded-3" style="max-width: 18rem; 
+        /box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56); text-align: center;"> 
             <img src="/<%= album.name %>/<%= album.pics[0] %>  " class="z-depth-5 mh-50" alt="...">
             <div class="card-body" style=" background-color: rgb(241, 241, 241);">
               <h5 class="card-text"><a href="/<%= album.name %>"><span class="text-muted"><%= album.name %></span></a> </h5>
