@@ -6,7 +6,7 @@ const methodOverride = require('method-override'); // import method override to 
 const ejsMate = require('ejs-mate'); //import ejs engine allowing for layouts rather than partials
 const app = express(); // running app
 const path = require('path'); // import path module to get access to file paths
-const ip = require('ip);
+const ip = require('ip');
 const fs = require('fs');
 app.set('views', path.join(__dirname, 'views')); // set view path
 app.set('view engine', 'ejs'); // set view engine
