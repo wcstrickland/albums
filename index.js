@@ -6,6 +6,7 @@ const methodOverride = require('method-override'); // import method override to 
 const ejsMate = require('ejs-mate'); //import ejs engine allowing for layouts rather than partials
 const app = express(); // running app
 const path = require('path'); // import path module to get access to file paths
+const ip = require('ip);
 const fs = require('fs');
 app.set('views', path.join(__dirname, 'views')); // set view path
 app.set('view engine', 'ejs'); // set view engine
@@ -32,7 +33,7 @@ app.get('/', async (req, res, next) => {
             albumObj.pics = pics.map(x => x.replace('"', ''))
             albumsList.push(albumObj);
         }
-        console.log("Album Server is Running")
+        console.log("Home Page hit")
         res.render('home', { albumsList });
     } catch (e) {
         next();
@@ -54,7 +55,7 @@ app.get('/:id', async (req, res, next) => {
             albumObj.pics = pics.map(x => x.replace('"', ''))
             albumsList.push(albumObj);
         }
-        console.log("Album Server is Running")
+        console.log(id)
         res.render('pics/pics', { stripPics, id, albumsList })
     } catch (e) {
         next();
@@ -73,7 +74,6 @@ app.use((err, req, res, next) => {
 });
 
 // LISTENER
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`SERVING ON PORT ${port}`);
+app.listen(8080, () => {
+    console.log(`visit @ ${ip.address()}:8080');
 });
