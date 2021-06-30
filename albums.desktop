@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Exec=/home/bean/albums/albums.sh
+Name=Albums
+GenericName=Albums
+Comment=start albums server
+Encoding=UTF-8
+Terminal=true
+Type=Application
+Categories=Application
