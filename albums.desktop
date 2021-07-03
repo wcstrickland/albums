@@ -1,6 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Exec=/home/bean/albums/albums.sh
+#Exec=<path/to/this/directory/albums.sh>
+Exec=/home/bill/Public/albums/albums.sh
 Name=Albums
 GenericName=Albums
 Comment=start albums server
