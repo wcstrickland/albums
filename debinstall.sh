@@ -13,7 +13,8 @@ Terminal=true
 Type=Application
 Categories=Application
 "> album.desktop
-cp. album.desktop /home/$1/Desktop/
+mkdir /home/$1/Desktop
+cp album.desktop /home/$1/Desktop/
 mkdir /home/$1/Pictures
 mkdir /home$1/Pictures/Public_Pictures
 ln -s /home$1/Pictures/Public_Pictures ./public
