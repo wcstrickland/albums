@@ -1,10 +1,13 @@
 #!/bin/bash
+apt install curl
+curl -sL https://deb.nodesource.com/setup_14.x 
 apt install nodejs npm
-npm i
-echo" 
-#!/usr/bin/env xdg-open
+#npm i
+touch album.desktop
+chmod 777 album.desktop
+echo "#!/usr/bin/env xdg-open
 [Desktop Entry]
-Exec=/home/$1/albums/albums.sh
+Exec=$PWD/albums.sh
 Name=Albums
 GenericName=Albums
 Comment=start albums server
@@ -12,9 +15,12 @@ Encoding=UTF-8
 Terminal=true
 Type=Application
 Categories=Application
-"> album.desktop
+" > album.desktop
+mkdir ./public
+chown -R $1 ./
 mkdir /home/$1/Desktop
 cp album.desktop /home/$1/Desktop/
+chown -R $1 /home/$1/Desktop
 mkdir /home/$1/Pictures
-mkdir /home$1/Pictures/Public_Pictures
-ln -s /home$1/Pictures/Public_Pictures ./public
+ln -s ./public /home/$1/Pictures/
+chown -R $1 /home/$1/Pictures
