@@ -2,7 +2,7 @@
 apt install curl
 curl -sL https://deb.nodesource.com/setup_14.x 
 apt install nodejs npm
-#npm i
+npm i
 touch album.desktop
 chmod 777 album.desktop
 echo "#!/usr/bin/env xdg-open
@@ -22,5 +22,6 @@ mkdir /home/$1/Desktop
 cp album.desktop /home/$1/Desktop/
 chown -R $1 /home/$1/Desktop
 mkdir /home/$1/Pictures
-ln -s ./public /home/$1/Pictures/
+mkdir /home/$1/Pictures/Public_Albums
+ln -s /home/$1/Pictures/Public_Albums ./public 
 chown -R $1 /home/$1/Pictures

@@ -9,7 +9,8 @@ const path = require('path'); // import path module to get access to file paths
 const ip = require('ip');
 const fs = require('fs');
 const { spawn } = require("child_process");
-const visit = spawn("firefox", [`${ip.address()}:8080`]||"google-chrome", [`${ip.address()}:8080`])
+const visit = spawn( "google-chrome-stable", [`${ip.address()}:8080`])
+//const visit2 = spawn("google-chrome-stable", [`${ip.address()}:8080`])
 app.set('views', path.join(__dirname, 'views')); // set view path
 app.set('view engine', 'ejs'); // set view engine
 app.engine('ejs', ejsMate); // add engine
